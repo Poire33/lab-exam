@@ -11,20 +11,20 @@ public class employeeController {
     }
 
     @GetMapping("/employees/{employeeCode}")
-    public String getEmployee(@PathVariable String employeeCode) {
+    public String getEmployee(@Valid @PathVariable String employeeCode) {
         // Get employee details from ID
         return "Employee details";
     }
 
     @PutMapping("/employees/{employeeCode}")
-    public String updateEmployee(@PathVariable String employeeCode) {
+    public String updateEmployee(@Valid @PathVariable String employeeCode) {
         // Delete employee
         // Add employee
         return "Employee details";
     }
 
     @DeleteMapping("/employees/{employeeCode}")
-    public String deleteEmployee(@PathVariable String employeeCode) {
+    public String deleteEmployee(@Valid @PathVariable String employeeCode) {
         // Delete employee
         return "Employee details";
     }
