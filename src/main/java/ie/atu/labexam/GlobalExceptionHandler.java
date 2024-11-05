@@ -12,11 +12,11 @@ import java.util.ArrayList;
 public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public List<ErrorDetails> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        List<ErrorDetails> errors = newArrayList<>();
+        List<ErrorDetails> errors = new ArrayList<>();
         ex.getBindingResult().getFieldErrors().forEach(error -> {
             String fieldName = error.getField();
             String errorMessage = error.getDefaultMessage();
-            ErrorDetails errorDetails = new ErrorDetails(fieldName, errorMessage);
+            ErrorDetails errorDetails = new ErrorDetails();
             errors.add(errorDetails);
         });
 
