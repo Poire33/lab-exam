@@ -24,9 +24,10 @@ public class employee {
     @NotBlank(message = "Position cannot be blank")
     private String position;
 
-    @Size(min = 0, message = "Salary must be greater than 0")
+    @Min(0)
     private Float salary;
 
     @DateTimeFormat
+    @PastOrPresent
     private Date dateOfJoining;
 }
